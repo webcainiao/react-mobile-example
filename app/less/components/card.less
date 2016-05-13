@@ -1,0 +1,107 @@
+.app-card{
+  animation: fadeInUp 0.3s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  width: 100%;
+  margin-bottom: 1rem;
+  &:hover, &:active{
+    .card-img{
+      transform: scale(1.3);
+      transition: all 0.3s ease-out;
+    }
+  }
+  .card-img-container{
+    position: relative;
+  }
+  .card-img{
+    width: 100%;
+    display: block; //fix img tag vertical-inline's bug
+    border-top-left-radius: @card_border_radius;
+    border-top-right-radius: @card_border_radius;
+  }
+  .img-container{
+    overflow: hidden;
+  }
+  .img-mask{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0.5rem;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    text-align: left;
+    color: #fff;
+    background: linear-gradient(180deg, transparent 65%, #333);
+  }
+  .card-bottom{
+    padding: 1rem;
+    border: 1px solid #e5e5e5;
+    border-top: none;
+    background-color: #fff;
+    border-bottom-left-radius: @card_border_radius;
+    border-bottom-right-radius: @card_border_radius;
+  }
+  .card-description{
+    font-size: 1.2rem;
+    line-height: 1.2em;
+    color: @font_level_2;
+    padding-bottom: 0.5rem;
+  }
+  .card-location{
+    font-size: 0.6rem;
+    .icon-dingwei{
+      font-size: 0.8rem;
+    }
+    .item{
+      &:not(:last-child):after {
+        content: "●";
+        font-size: 4px;
+        display: inline-block;
+      }
+    }
+  }
+  .card-user{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .card-datetime{
+    line-height: 0.8rem;
+    .time{
+      font-weight: 500;
+      font-size: 0.8rem;
+    }
+    .date{
+      display: inline-block;
+      padding-left: 0.3rem;
+      font-size: 0.4rem;
+    }
+  }
+  .card-user-name{
+    padding-left: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: @font_level_1;
+  }
+  .card-user-avatar{
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

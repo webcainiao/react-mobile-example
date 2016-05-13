@@ -1,0 +1,30 @@
+.app-list{
+  padding: 0 1rem 1rem 1rem;
+  .list-content{
+    display: flex;
+    flex-direction: row;
+  }
+  .left-container{
+    overflow: hidden;
+    flex: 1;
+    padding-right: 0.5rem;
+    .app-card:nth-child(odd){
+      animation-delay: 0.1s;
+    }
+  }
+  .right-container{
+    flex: 1;
+    overflow: hidden;
+    padding-left: 0.5rem;
+    .app-card:nth-child(even){
+      animation-delay: 0.2s;
+    }
+  }
+  .list-loading{
+    text-align: center;
+    padding: 30px 0;
+    .loading-svg{
+      width: 2.4rem;
+    }
+  }
+}
